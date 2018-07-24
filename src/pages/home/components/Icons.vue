@@ -1,21 +1,54 @@
 <template>
     <div class="icons">
-        <div class="icon">
+        <div class="icon" v-for="item of iconList" :key="item.id">
             <div class="icon-img">
-                <img class="icon-img-content" src="//pic.c-ctrip.com/platform/h5/home/pic-tmh-04.png">
+                <img class="icon-img-content" :src="item.url">
             </div>
-            <p class="icon-desc">经典</p>
-        </div>
-        <div class="icon">
-            <img src="//pic.c-ctrip.com/platform/h5/home/pic-tmh-03.png">
-            <p></p>
+            <p class="icon-desc">{{item.desc}}</p>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: "HomeIcons"
+        name: "HomeIcons",
+        data() {
+            return {
+                iconList: [{
+                    id: '001',
+                    url: '//pic.c-ctrip.com/platform/h5/home/pic-tmh-04.png',
+                    desc: '景点'
+                }, {
+                    id: '002',
+                    url: '//pic.c-ctrip.com/platform/h5/home/pic-tmh-03.png',
+                    desc: '地点'
+                }, {
+                    id: '003',
+                    url: '//pic.c-ctrip.com/platform/h5/home/pic-tmh-03.png',
+                    desc: '地点'
+                }, {
+                    id: '004',
+                    url: '//pic.c-ctrip.com/platform/h5/home/pic-tmh-03.png',
+                    desc: '地点'
+                }, {
+                    id: '005',
+                    url: '//pic.c-ctrip.com/platform/h5/home/pic-tmh-03.png',
+                    desc: '地点'
+                }, {
+                    id: '006',
+                    url: '//pic.c-ctrip.com/platform/h5/home/pic-tmh-03.png',
+                    desc: '地点'
+                }, {
+                    id: '007',
+                    url: '//pic.c-ctrip.com/platform/h5/home/pic-tmh-03.png',
+                    desc: '地点'
+                }, {
+                    id: '008',
+                    url: '//pic.c-ctrip.com/platform/h5/home/pic-tmh-03.png',
+                    desc: '地点'
+                }]
+            }
+        }
     }
 </script>
 
@@ -43,7 +76,7 @@
                 .icon-img-content
                     display block
                     margin 0 auto
-                    width  100%
+                    width 100%
             .icon-desc
                 position absolute
                 left 0
