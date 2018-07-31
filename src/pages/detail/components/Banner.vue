@@ -1,17 +1,19 @@
 <template>
     <div>
         <div class="banner" @click="handleBannerClick">
-            <img class="banner-img" src="https://dimg01.c-ctrip.com/images/100k0r000000h6ngg6228_C_640_320.jpg"/>
+            <img class="banner-img" :src="bannerImg" />
             <div class="banner-info">
-                <div class="banner-tittle">大连圣亚海洋世界（AAAA景区）</div>
+                <div class="banner-tittle">
+                    {{this.sightName}}
+                </div>
                 <div class="banner-number">
                     <span class="iconfont banner-icon">&#xe608;</span>
-                    39
+                    {{this.bannerImgs.length}}
                 </div>
             </div>
         </div>
         <common-gallary
-            :imgs="imgs"
+            :imgs="bannerImgs"
             v-show="showGallary"
             @close="handleGallaryClose"
         ></common-gallary>
@@ -23,13 +25,14 @@
 
     export default {
         name: "DetailBanner",
+        props: {
+            sightName: String,
+            bannerImg: String,
+            bannerImgs: Array
+        },
         data() {
             return {
-                showGallary: false,
-                imgs: [
-                    'https://youimg1.c-ctrip.com/target/100s0h0000008p753ACAC_R_640_10000_Q90.jpg',
-                    'https://youimg1.c-ctrip.com/target/100p0700000026ao9FE9A_R_640_10000_Q90.jpg'
-                ]
+                showGallary: false
             }
         },
         methods: {
