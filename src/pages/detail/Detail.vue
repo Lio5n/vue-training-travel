@@ -37,6 +37,7 @@
         methods: {
             getDetailInfo() {
                 axios.get("/api/detail.json", {
+                // axios.get("http://47.98.251.187/api/detail.json", {
                     params: {
                         id: this.$route.params.id
                     }

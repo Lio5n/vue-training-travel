@@ -39,6 +39,7 @@
         methods: {
             getCityInfo() {
                 axios.get("/api/city.json")
+                // axios.get("http://47.98.251.187/api/city.json")
                     .then(this.handleGetCityInfoSucc)
             },
             handleGetCityInfoSucc(res) {
